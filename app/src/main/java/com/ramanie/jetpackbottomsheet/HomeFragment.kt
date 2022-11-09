@@ -44,15 +44,18 @@ fun HomeFragment(){
             }
         },
         // the peekHeight defines the height of the part of the sheet that'll be visible
-        sheetPeekHeight = 15.dp,
+        sheetPeekHeight = 0.dp,
         // the sheetShape will allow us to modify the shape of the bottomSheet to our liking
-        sheetShape = RoundedCornerShape(topEnd = 0.1f, topStart = 0.1f),
+        sheetShape = RoundedCornerShape(topEnd = 50f, topStart = 50f),
         sheetElevation = 10.dp,
         sheetBackgroundColor = Color.LightGray
     ) {
         //This is where we put the content that should appear in the screen
-        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-            Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center) {
+        Box(modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center){
+            Column(modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center) {
                 // the text below will tell us how far the use is when swiping the sheet,
                 // we can use this info to update another composable or run an animation
                 Text(text = "${sheetState.progress.fraction}")
